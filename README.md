@@ -27,6 +27,7 @@ Now that we know the flow of the game, lets analyze to apply it in coding.
 #### We need these variables:
  - humanScore (let)
  - computerScore (let)
+ - choices (const) in _Function_ playRound()
  - humanChoice (const) in _Function_ playRound()
  - computerChoice (const) in _Function_ playRound()
 
