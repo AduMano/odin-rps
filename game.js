@@ -3,6 +3,7 @@ const playGame = () => {
     let humanScore = 0;
     let computerScore = 0;
     let pressing = false;
+    let ended = false;
     const logs = document.querySelector(".logs p");
     const compHumanScore = document.querySelector("#humanScore");
     const compComputerScore = document.querySelector("#computerScore");
@@ -86,9 +87,11 @@ const playGame = () => {
     const checkWinner = () => {
         if (humanScore == 5) {
             showModal("You Won!", `SCORE BOARD \n===============\n You: ${humanScore} \n Computer: ${computerScore}`);
+            ended = true;
         }
         else if (computerScore == 5) {
             showModal("You Lost!", `SCORE BOARD \n===============\n You: ${humanScore} \n Computer: ${computerScore}`);    
+            ended = true;
         }
     }
     
@@ -122,24 +125,27 @@ const playGame = () => {
 
     // FOR KEY INPUTS
     document.addEventListener("keydown", (e) => {
-        if (e.key == "1" && !pressing) {
+        if (e.key == "1" && !pressing && !ended) {
             playRound("rock");
             document.querySelector("#rock").classList.add("active");
         }
-        else if (e.key == "2" && !pressing) {
+        else if (e.key == "2" && !pressing && !ended) {
             playRound("paper");
             document.querySelector("#paper").classList.add("active");
         }
-        else if (e.key == "3" && !pressing) {
+        else if (e.key == "3" && !pressing && !ended) {
             playRound("scissor");
             document.querySelector("#scissor").classList.add("active");
         }
+        else if (e.key == "Enter" && ended) location.reload();
 
         pressing = true;
     });
     document.addEventListener("keyup", (e) => {
-        pressing = false;
-        document.querySelector(".active").classList.remove("active");
+        if (pressing && !ended) {
+            document.querySelector(".active").classList.remove("active");
+            pressing = false;
+        }
     });
 }
 

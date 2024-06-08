@@ -28,7 +28,7 @@ const showModal = (modalTitle, modalMessage) => {
         footer.classList.add("footer");
 
             const btn = document.createElement("button");
-            btn.textContent = "Try Again";
+            btn.textContent = "Try Again (Enter)";
             btn.addEventListener("click", () => {
                 location.reload();
             });

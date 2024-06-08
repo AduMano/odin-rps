@@ -53,11 +53,15 @@ Now that we know the flow of the game, lets analyze to apply it in coding.
 ## CHANGES
 > [!IMPORTANT]
 > As mentioned in the last item above, I mostly reworked the old code, like 50% of it and added new things. There are changes thats been made in this branch that will soon be merged with the original (Main) Branch.
+> #### Update [June 9, 2024 : 03:08 AM]
+> Added "ended" variable to check if the game had already ended because the keyboard inputs still register as I type 1, 2 or 3 which is not normal. 
+> I also added a key event when the game ended where the modal pops, you are able to press "Enter" as alternative of pressing the button.
 
 #### Changes in variables:
  - humanScore (let)
  - computerScore (let)
  - pressing (let) * 
+ - ended (let) *
  - logs (const) (component) *
  - compHumanScore (const) (component) *
  - compComputerScore (const) (component) *
