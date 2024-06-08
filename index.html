@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper and Scissor Game</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="modal.js" defer></script>
 </head>
 <body>
+    <div class="container">
+        <div class="scoreBoard">
+            <h1>You <span id="humanScore">0</span></h1>
+            <h1>Computer <span id="computerScore">0</span></h1>
+        </div>
+
+        <div class="logs">
+            <p>To Start, Choose between Rock, Paper or Scissors <br>
+                [ Or press 1, 2, or 3 for alternatives ]
+            </p>
+        </div>
+
+        <div class="action">
+            <button id="rock">Rock (1)</button>
+            <button id="paper">Paper (2)</button>
+            <button id="scissor">Scissors (3)</button>
+        </div>
+    </div>
     
     <script src="game.js"></script>
 </body>
